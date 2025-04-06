@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% set ssti_enabled = ssti_enabled if ssti_enabled is defined else false %}
+{% block title %}Create Event{% endblock %}
+
+{% block content %}
+<h2>Create a New Event</h2>
+<form method="POST" action="/event">
+    <label>Event Name:</label>
+    <input type="text" name="event_name" required>
+
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Location:</label>
+    <input type="text" name="location" required>
+
+    <label>Description about Event:</label>
+    <textarea name="description" rows="4"></textarea>
+
+    <button type="submit">Create Event</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% set ssti_enabled = ssti_enabled if ssti_enabled is defined else false %}
+{% block title %}Event Details{% endblock %}
+
+{% block content %}
+<h2>🎈 Event Details</h2>
+<div class="details">
+    <p><strong>Event Name:</strong> {{ event_name }}</p>
+    <p><strong>Date:</strong> {{ date }}</p>
+    <p><strong>Location:</strong> {{ location }}</p>
+    <p><strong>Description:</strong> {{ description|safe }}</p>
+</div>
+<a class="back-link" href="/">⬅️ Create Another Event</a>
+{% endblock %}
