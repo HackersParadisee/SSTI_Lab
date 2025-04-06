@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MrWebSecure Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MrWebSecure</div>
+        <div class="nav-links">
+            <a href="/">Profile</a>
+            <a href="/about">About SSTI</a>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        <img src="{{ url_for('static', filename='mrwebsecure.png') }}" class="profile-pic">
+        <h1>{{ profile_info['username'] }}</h1>
+        <p>{{ profile_info['bio'] }}</p>
+        <p>Location: {{ profile_info['location'] }}</p>
+        <p>Website: <a href="{{ profile_info['website'] }}">{{ profile_info['website'] }}</a></p>
+    </div>
+
+    <div class="edit-section">
+        <form method="POST" onsubmit="return validateForm()">
+            <input type="text" name="username" placeholder="Username" value="{{ profile_info['username'] }}">
+            <textarea name="bio" placeholder="Bio">{{ profile_info['bio'] }}</textarea>
+            <input type="text" name="location" placeholder="Location" value="{{ profile_info['location'] }}">
+            <input type="text" name="website" placeholder="Website" value="{{ profile_info['website'] }}">
+            <input type="text" name="vulnerable_field" placeholder="Vulnerable Input (Try Payload)">
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+
+    {% if output %}
+        <div class="output-section">
+            {{ output | safe }}
+        </div>
+    {% endif %}
+</body>
+</html>
