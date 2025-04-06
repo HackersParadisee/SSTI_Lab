@@ -29,6 +29,9 @@ If an attacker inputs {{7*7}} and it gets rendered as code, the result will be 4
 
 ---
 
+![image](https://github.com/user-attachments/assets/22268dd1-36ee-4951-91d3-0ffddd424a75)
+
+
 🧑‍💻 Author
 Created by Yash Pawar
 Project for educational and ethical hacking purposes only.
