@@ -29,19 +29,6 @@ If an attacker inputs {{7*7}} and it gets rendered as code, the result will be 4
 
 ---
 
-## 🔍 How to Detect SSTI
-
-Common Payloads to Detect SSTI:
-Payload	Expected Output	Notes
-
-{{7*7}}	49	Simple math test
-{{1337*2}}	2674	Value change test
-{{config}}	Dict Output	Access Flask config
-{{request}}	Flask request obj	Shows full request obj
-{{''.__class__.__mro__[1].__subclasses__()}}	List of classes	Can lead to RCE!
-
----
-
 🧑‍💻 Author
 Created by Yash Pawar
 Project for educational and ethical hacking purposes only.
