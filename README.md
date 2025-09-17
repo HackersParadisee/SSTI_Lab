@@ -37,3 +37,21 @@ Created by Yash Pawar
 Project for educational and ethical hacking purposes only.
 
 ---
+
+```python
+int main ()
+{
+	a= 
+	b=
+	print (a+b)
+
+}
+```
+
+
+
+
+
+
+
+
